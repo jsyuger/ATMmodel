@@ -132,6 +132,7 @@ public class Test extends JFrame{
 	    
 	}
 	
+	//timer1
 	public void timer1() {  
         Timer timer = new Timer();  
         timer.schedule(new TimerTask() {  
@@ -142,6 +143,7 @@ public class Test extends JFrame{
         }, 3000);// 设定指定的时间time,此处为3000毫秒  
     } 
 	
+	//timer1
 	public void timer2(final JPanel panel) {  
         Timer timer = new Timer();  
         timer.schedule(new TimerTask() {  
