@@ -52,6 +52,12 @@ public class Test extends JFrame{
 		
 	}
 	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 JFrame frame=new Test();
+		 frame(frame);
+	}
+	
 	static class BackPanel extends JPanel{
 		 protected void paintComponent(Graphics g){
 			 super.paintComponent(g);
@@ -59,11 +65,6 @@ public class Test extends JFrame{
 		 }
 	}
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		 JFrame frame=new Test();
-		 frame(frame);
-	}
 
 	public static void frame(JFrame frame) {
 		 frame.setTitle("В╩вссно╥");
