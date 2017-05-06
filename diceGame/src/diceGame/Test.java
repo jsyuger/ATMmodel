@@ -26,7 +26,7 @@ public class Test extends JFrame{
 	public Test(){
 		//添加背景图片
 		BackPanel jp=new BackPanel();
-		jp.setVisible(true);
+		jp.setVisible(true);//设置不可见
 		jp.setOpaque(false);  //设置控件透明
 		
 		//添加按钮
