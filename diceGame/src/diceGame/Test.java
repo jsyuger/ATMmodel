@@ -1,6 +1,5 @@
 package diceGame;
 
-
 import java.awt.BorderLayout;
 import java.awt.Graphics;
 import java.awt.GridLayout;
@@ -20,6 +19,7 @@ import javax.swing.JToggleButton;
 public class Test extends JFrame{
 	private static ImageIcon imgIcon=new ImageIcon("src/girl.png");
 	private static Image img=imgIcon.getImage();
+	private Player player;
 	private int number[];
 	private JFrame frame;
 	
@@ -42,11 +42,11 @@ public class Test extends JFrame{
 		//添加监听器
 		begin.addActionListener(new ActionListener(){
 		     public void actionPerformed(ActionEvent e){
-		    	 Player player=new Player();
-		    	 number=player.start();
+		    	 player=new Player();
+		    	 player.start();
 		    	 rolling();
 		    	 timer1();
-		    	 //System.out.print(number[0]+number[1]);
+		    	 
 			 }
 		 });
 		
@@ -122,10 +122,11 @@ public class Test extends JFrame{
 	    //添加监听器
   		again.addActionListener(new ActionListener(){
   		     public void actionPerformed(ActionEvent e){
-  		    	 Player player=new Player();
-  		    	 number=player.start();
+  		    	 //player=new Player();
+  		    	 player.start();
   		    	 frameDispose();
   		    	 rolling();
+  		    	 //number=player.end();
   		    	 timer1();
   		    	 
   			 }
@@ -139,6 +140,7 @@ public class Test extends JFrame{
         timer.schedule(new TimerTask() {  
             public void run() {
             	dispose();
+            	number=player.end();
                 result(); 
             }  
         }, 3000);// 设定指定的时间time,此处为3000毫秒  
