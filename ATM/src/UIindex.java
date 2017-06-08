@@ -4,6 +4,8 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -31,8 +33,9 @@ public class UIindex extends JFrame{
 	private JLabel attention=new JLabel(""+second);
 	Font f1=new Font("黑体",Font.BOLD,45);
 	Font f2=new Font("Times New Roman",Font.BOLD,18);
-	private ATM atm;
+	private static ATM atm;
 	Session session;
+	
 	//利用构造方法初始化界面
 	public UIindex(){
 		//创建ATM
@@ -485,6 +488,22 @@ public class UIindex extends JFrame{
 		 frame.setVisible(true);
 		 frame.setResizable(false);
 		 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		 
+		 //关闭时添加监听器
+		 frame.addWindowListener(new WindowAdapter()  
+	        {  
+	            public void windowClosing(WindowEvent e)  
+	            {  
+	                //System.out.println("触发windowClosing事件"); 
+	                atm.turnoff();
+	            }  
+	  
+	            public void windowClosed(WindowEvent e)  
+	            {  
+	                System.out.println("触发windowClosed事件");  
+	                atm.turnoff();
+	            }  
+	        });  
 	}
 	
 	//hide frame

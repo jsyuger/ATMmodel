@@ -11,6 +11,7 @@ public class ATM {
 	    //customer=new Customer();
 	    //card=new Card();
 	    account=new Account();
+	    System.out.println("ATM已经准备就绪...");
    }
     public CashDispenser getCashDispenser() {
 		return cashDispenser;
@@ -51,5 +52,11 @@ public class ATM {
     //钞箱吐钱
     public void outMoney(int amount){
     	cashDispenser.outCash(amount);
+    }
+    
+    //关闭ATM
+    public void turnoff(){
+    	System.out.println("ATM已经关闭，谢谢使用！");
+    	System.out.println("----------------------");
     }
 }
