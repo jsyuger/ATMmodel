@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+//该类是打印机完成打印过程的工具类 相当于接口
 public class UIprinter extends JFrame{
 	private static JFrame frame;
 	private static JFrame frame1;

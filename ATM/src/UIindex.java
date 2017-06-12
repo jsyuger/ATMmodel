@@ -34,7 +34,7 @@ public class UIindex extends JFrame{
 	Font f1=new Font("黑体",Font.BOLD,45);
 	Font f2=new Font("Times New Roman",Font.BOLD,18);
 	private static ATM atm;
-	Session session;
+	private Session session;
 	
 	//利用构造方法初始化界面
 	public UIindex(){

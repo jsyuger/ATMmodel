@@ -1,6 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author jsyuger
+ * @date : 2017年6月12日 上午11:02:22
+ */  
+
 
 public class Session {
 	   private    int      SessionState=0;//会话状态，当为0时为自由状态，当为1时为启用状态
@@ -25,19 +30,30 @@ public class Session {
     	   transaction.getAccount(currentAccount);
        }
        
+       
+       /*
+       	*取款交易
+       */
+       
+       //取款交易处理
        public void drawMoneyTranscation(int currentAccountID,int amount){
     	   SessionState=1;
     	   TransactionResult=transaction.drawMoney(currentAccountID, amount);
     	   SessionState=0;
        }
+       
+       //余额
        public int getAccountBalance(int currentAccountID){
     	   return transaction.getAccountBalance(currentAccountID);
        }
-	public int getTransactionResult() {
-		return TransactionResult;
-	}
-	public void setTransactionResult(int transactionResult) {
-		TransactionResult = transactionResult;
-	}
+       
+       
+		public int getTransactionResult() {
+			return TransactionResult;
+		}
+		
+		public void setTransactionResult(int transactionResult) {
+			TransactionResult = transactionResult;
+		}
        
 }
