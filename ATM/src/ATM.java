@@ -5,13 +5,17 @@ public class ATM {
     private Card card;
     private Customer customer;
     private Account account;
+    private boolean off=true;
     public void turnOn(){
-	    cashDispenser=new CashDispenser();
-	    cardReader=new CardReader();
-	    //customer=new Customer();
-	    //card=new Card();
+    	if(off){
+		    cashDispenser=new CashDispenser();
+		    cardReader=new CardReader();
+		    //customer=new Customer();
+		    //card=new Card();
+		    off=false;
+		    System.out.println("ATM已经准备就绪...");
+    	}
 	    account=new Account();
-	    System.out.println("ATM已经准备就绪...");
    }
     public CashDispenser getCashDispenser() {
 		return cashDispenser;
